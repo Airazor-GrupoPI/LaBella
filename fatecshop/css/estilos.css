@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo{
+    width: 8em;
+    border-radius: 65px;
+    filter: drop-shadow(2px 2px 4px gray);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    border: 2px solid green;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+nav a {
+    display: inline-block;
+    color: green;
+    text-decoration: none;
+    filter: drop-shadow(2px 2px 4px gray);
+}
+
+nav a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    color: white;  
+    font-size: 20px;
+    list-style-type: none; /* remove o marcador (bolinha) do item */
+    width: 160px;
+    height: 50px;
+    text-align: center; /* centraliza horizontalmente o texto */
+    line-height: 50px; /* define a altura da linha de texto */
+    vertical-align: middle; /* centraliza verticalmente o conteúdo */
+}
+
+h1 {
+    font-size: 72px;
+    text-shadow: 3px 3px 3px gray;
+    color: green;
+}
+
+#slogan {
+    font-size: 28px;
+    font-style: italic;
+}
+
+img {
+    width: 320px;
+}
+
+.card {
+    width: 240px;
+    height: 350px;
+    border: 2px solid maroon;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px lightgray;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 42px;
+    color: brown;
+    margin-left: 20px;  
+    margin-top: 20px;
+    margin-bottom: 12px;
+    border-top: 1px solid crimson;
+    padding: 6px;
+    background-color: aliceblue;
+}
+
+.preco {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: tomato;
+}
+
+.card img {
+    width: 160px;
+}
+
+#lancamentos, #ofertas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: gray;
+    color: white;
+}
+
+#redes img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+#redes ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#redes li {
+    margin: 20px;
+    list-style-type: none;
+    height: 32px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+#redes li a {
+    display: inline-block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 32px;
+    width: 120px;
+}
+
+address {
+    padding-bottom: 40px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+#produto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;      
+}
+
+#fotos-produto img {
+    height: 520px;
+    width: 100%;
+    border-radius: 6px;    
+}
+
+#fotos-miniatura {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 15px;
+    gap: 12px;
+}
+
+#fotos-miniatura img {
+    width: 104px;
+    height: 104px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#dados-produto {
+    width: 60%;
+    margin: 40px;
+}
+
+#dados-produto h3 {
+    font-size: 42px;
+    margin-bottom: 20px;   
+}
+
+#dados-produto p {
+    font-size: 24px;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#tamanho {
+    font-size: 18px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.quantidade input {
+    width: 50px;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 6px;
+}
+
+.quantidade button {
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.imagem-selecionada {
+    border: 2px solid cornflowerblue;
+    border-radius: 6px;
+}
