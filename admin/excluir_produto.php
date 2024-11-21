@@ -7,7 +7,7 @@
 
     include "conexao.php";
 
-    $sql  = "delete from produtos where codigo = :code"; 
+    $sql  = "DELETE from produtos where codigo = :code"; 
 
         //PARA EVITAR O XSS (CROS SITE SCRIPT) DE HTML E JavaScript NUM FORM, USAR O "htmlspecialchars()"
     $codigo     = intval(htmlspecialchars($_GET["codigo"]));
@@ -22,7 +22,7 @@
     $sucesso = $comando->execute();
 
     if ($sucesso){
-        header("Location: http://localhost/fatecshop/admin/listar_produtos.php");
+        header("Location: http://localhost/Servidor/pizzaria/admin/listar_produtos.php");
     }
 
 ?>
@@ -32,7 +32,7 @@
     <head>
         <meta charset="utf-8">
         <title>FatecShop - Admin</title>
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/estiloadm.css">
     </head>
     <body>
         <h1>FatecShop - Área Administrativa</h1>

@@ -1,0 +1,93 @@
+
+h1 {
+    font-size: 72px;
+    text-shadow: 3px 3px 3px gray;
+    color: brown;
+}
+
+h2{
+    margin: 20px;
+}
+
+#corpo, .opcoes, .cabeca, #cad_pro, #lis_pro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form, .opcoes, .form_prod {
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 6px;
+    width: 43%;
+    line-height: 1.8em;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: rgb(102, 134, 99);
+    color: aliceblue;
+}
+
+.labeln{
+    padding: 4px;
+
+}
+
+.labeln a{
+    background-color: aliceblue;
+    text-decoration: none;
+    color: #363535;
+    font-size: 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+ul, a{
+    color: aliceblue;
+    font-size: 20px;
+    text-decoration: none; /* remove o underline (sublinhado) padrão do link */
+    list-style-type: none; /* remove o marcador (bolinha) do item */
+}
+
+p{
+    text-align: center;
+}
+
+form div {
+    margin-top: 8px;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+label {
+    display: inline-block;
+    width: 180px;
+    text-align: right;
+    margin-right: 8px;
+    vertical-align: top;
+}
+
+table, th, td {
+    border-color: #363535;
+    border: 2px solid;
+    margin-bottom: 20px;
+    background-color: rgb(102, 134, 99);
+}
+
+table {
+    border-collapse: collapse;
+    width: 1200px;
+}
+
+th {
+	background-color: rgb(102, 134, 99);
+}
+
+td {
+    color: aliceblue;
+    text-align: center;
+}
