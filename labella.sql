@@ -1,3 +1,4 @@
+create database labella;
 use labella;
 
 show tables;
@@ -63,7 +64,19 @@ CREATE TABLE carrinho (
 
 CREATE TABLE login (
 	sessao CHAR(32) NOT NULL,
-	PRIMARY KEY (sessao, produto)
+	PRIMARY KEY (sessao, produtos)
 );
 
 -- ---------------------------------------------------------------------------------
+
+insert into produtos (codigo, nome, descricao, categoria, preco_unitario)
+values
+(null,'Calabresa','Molho de tomate, calabresa fatiada, cebola, cebolinha','Pizza',42.90),
+(null,'Mussarela','Molho de tomate, mussarela, tomate em rodelas','Pizza',48.90),
+(null,'Bubalina','Molho de tomate, mussarela de bufata, tomate cereja, manjericão fresco','Pizza',69.90),
+(null,'Portuguesa','Molho de tomate, mussarela, presunto, palmito, ovos picados, ervilha, cebola, cebolinha','Pizza',59.90),
+(null,'Francesa','Molho de tomate, mussarela, calabresa, cebola','Pizza',52.90),
+(null,'Meia mussarela e meia calabresa','Molho de tomate, mussarela, calabresa fatiada, tomate em rodelas, cebola, cebolinha','Pizza',45.90),
+(null,'Refrigerante, meia calabresa, meia mussarela','Refrigerante sabor guaraná, marca It, pizza meia calabresa e meia mussarela','Combo',49.90),
+(null,'Mussarela Promoção','Molho de tomate, mussarela, tomate em rodelas','Promoção',42.90),
+(null,'Calabresa Promoção','Molho de tomate, calabresa fatiada, cebola, cebolinha','Promoção',39.90);

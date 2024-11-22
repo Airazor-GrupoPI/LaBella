@@ -10,9 +10,14 @@
     </head>
     <body>
         <header class="container-fluid">
-            <img id="logo"   src="img/icone_LaBella.png"    alt="Logotipo LaBella">
-            <img id="banner" src="img/banner_LaBella.png"   alt="Banner LaBella">
-            <img id="login"  src="img/login.png"            alt="Login LaBella">
+            <div id="logo">
+                <img id="logoImg" src="img/icone_LaBella.png" alt="Logotipo LaBella">
+                <img id="slogan" src="img/slogan.png" alt="Slogan LaBella">
+            </div>
+            <a href="" id="login">
+                <p id="loginTxt">Acessar</p>
+                <img id="loginImg"  src="img/login.png" alt="Login LaBella">
+            </a>
         </header>
         <nav>
             <ul>

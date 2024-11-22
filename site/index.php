@@ -18,7 +18,6 @@ $resultadoc = $comandoc->fetchAll();
 $resultadop = $comandop->fetchAll();
 
 ?>
-
 <main class="container-fluid">
     <div class="ofertas">
         <div>
