@@ -5,41 +5,41 @@
 
 nav {
     background-color: rgb(145, 144, 144);
-    border: 2px solid rgb(233, 171, 171);
     margin-bottom: 15px;
     justify-content: right;
+    padding: 3px 0;
 }
 
 nav a {
     width: 160px;
     height: 50px;
-    display: inline-block; /* permite o redimensionamento do elemento "a" */
     color: white;
     text-decoration: none; /* remove o underline (sublinhado) padrão do link */
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* centraliza horizontalmente o texto */
 }
 
 /* a:hover indica que este estilo será aplicado quando o mouse for
    colocado em cima o link */
 nav a:hover {
-    color: darkred;
     background-color: white;
+    color: rgb(255, 180, 83);
+    border-radius: 4px;
 }
 
 nav ul {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 nav ul li {
-    color: white;  
-    font-size: 20px;
     list-style-type: none; /* remove o marcador (bolinha) do item */
-    width: 160px;
-    height: 50px;
-    border: 2px solid rgb(233, 171, 171);
-    text-align: center; /* centraliza horizontalmente o texto */
-    line-height: 50px; /* define a altura da linha de texto */
-    vertical-align: middle; /* centraliza verticalmente o conteúdo */
+    border: 2px solid rgb(255, 180, 83);
+    border-radius: 6px;
+    margin: 0 20px;
 }
 
 h1 {
@@ -55,11 +55,11 @@ h1 {
 }
 
 .card {
+    background-color: lightgray;
     width: 240px;
     height: 350px;
     border: 2px solid maroon;
     border-radius: 8px;
-    box-shadow: 4px 4px 4px lightgray;
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -122,7 +122,6 @@ td {
 
 footer {
     background-color: rgb(145, 144, 144);
-    color: rgb(114, 3, 3);
 }
 
 #redes img {
@@ -145,7 +144,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(114, 3, 3);
+    border: 1px solid rgb(255, 180, 83);
     border-radius: 8px;
     padding: 4px;
 }
@@ -156,7 +155,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(114, 3, 3);
+    color: rgb(255, 180, 83);
     height: 20px;
     width: 100px;
 }
@@ -240,4 +239,11 @@ footer {
 .imagem-selecionada {
     border: 2px solid cornflowerblue;
     border-radius: 6px;
+}
+
+main{
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    margin: 0 20px;
 }
