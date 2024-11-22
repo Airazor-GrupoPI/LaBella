@@ -1,4 +1,4 @@
-                            <!-- Página sem Bootstrap -->
+
 <?php
     session_start();
 
@@ -8,7 +8,7 @@
     //se não estiver, redirecionamos o usuário para a página de Login
     if(validar_admin($_POST["usuario"], $_POST["senha"])) {
         $_SESSION["admin"] = $_POST["usuario"];
-        header("Location: http://localhost/fatecshop/admin/index.php");
+        header("Location: http://localhost/LaBella/admin/index.php");
     }
 
 ?>
@@ -18,7 +18,7 @@
     <head>
         <meta charset="utf-8">
         <title>ACESSO NEGADO</title>
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/estiloadm.css">
     </head>
     <body>
         <h1 style="color: red;">ACESSO NEGADO</h1>

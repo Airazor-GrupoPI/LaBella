@@ -1,4 +1,3 @@
-                            <!-- Página sem Bootstrap -->
 <?php
     session_start();
 
@@ -7,6 +6,6 @@
 
     
         //Redireciona para o index.php
-    header("Location: http://localhost/fatecshop/admin/index.php");
+    header("Location: http://localhost/LaBella/admin/index.php");
 
 ?>

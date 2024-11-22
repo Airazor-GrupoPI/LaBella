@@ -1,4 +1,4 @@
-                            <!-- Página sem Bootstrap -->
+
 <?php
 
     include "funcoes.php";
@@ -7,8 +7,7 @@
 
     include "conexao.php";
 
-    $sql  = "insert into produtos (nome, descricao, categoria, preco_unitario)"; 
-    $sql .= "values (:nome, :desc, :cate, :prec)";  // Se precisar quebrar a linha dá para concatenar
+    $sql  = "INSERT into produtos (nome, descricao, categoria, preco_unitario) values (:nome, :desr, :cate, :prec)";  // Se precisar quebrar a linha dá para concatenar
 
         //PARA EVITAR O XSS (CROS SITE SCRIPT) DE HTML E JavaScript NUM FORM, USAR O "htmlspecialchars()"
     $nome       = htmlspecialchars($_POST["nome"]);
@@ -20,14 +19,14 @@
 
         //PARA EVITAR A INJEÇÃO DE SQL NUM FORM, USAR O "bindParam"
     $comando->bindParam(":nome", $nome);// Fazer a ligação dos valores obtidos no formulario com os campos
-    $comando->bindParam(":desc", $descricao);
+    $comando->bindParam(":desr", $descricao);
     $comando->bindParam(":cate", $categoria);
     $comando->bindParam(":prec", $preco); 
 
     $sucesso = $comando->execute();
 
     if ($sucesso){
-        header("Location: http://localhost/fatecshop/admin/listar_produtos.php");
+        header("Location: http://localhost/LaBella/admin/listar_produtos.php");
     }
 
 ?>
@@ -37,7 +36,7 @@
     <head>
         <meta charset="utf-8">
         <title>FatecShop - Admin</title>
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/estiloadm.css">
     </head>
     <body>
         <h1>FatecShop - Área Administrativa</h1>

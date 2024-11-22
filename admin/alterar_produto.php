@@ -1,4 +1,3 @@
-                            <!-- Página sem Bootstrap -->
 <?php
 
     include "funcoes.php";
@@ -7,31 +6,26 @@
 
     include "conexao.php";
 
-    $sql  = "update produtos set nome = :nome, descricao = :desc, categoria = :cat, preco_unitario = :prec";
-    $sql .= "where codigo = :codi";
+    $sql = "UPDATE produtos SET nome = :nome, descricao = :desc, categoria = :cat, preco_unitario = :preco WHERE codigo = :cod";
 
-        //PARA EVITAR O XSS (CROS SITE SCRIPT) DE HTML E JavaScript NUM FORM, USAR O "htmlspecialchars()"
-    $comando    = htmlspecialchars($_POST["codigo"]);
-    $nome       = htmlspecialchars($_POST["nome"]);
-    $descricao  = htmlspecialchars($_POST["descricao"]);
-    $categoria  = htmlspecialchars($_POST["categoria"]);
-    $preco      = floatval(htmlspecialchars($_POST["preco"])); //Sempre converter os valores numericos antes de passar para o comando
-    
-    $comando = $pdo->prepare($sql); // Comando de preparação para enviar ao Banco de Dados
+    $cod = htmlspecialchars($_POST["codigo"]);
+    $preco = floatval(htmlspecialchars($_POST["preco"])); // Convertemos o preço de string para float
+    $nome = htmlspecialchars($_POST["nome"]);
+    $desc = htmlspecialchars($_POST["descricao"]);
+    $cat = htmlspecialchars($_POST["categoria"]);
 
-        //PARA EVITAR A INJEÇÃO DE SQL NUM FORM, USAR O "bindParam"
-    $comando->bindParam(":codi", $cod);    
-    $comando->bindParam(":nome", $nome);// Fazer a ligação dos valores obtidos no formulario com os campos
-    $comando->bindParam(":desc", $descricao);
-    $comando->bindParam(":cate", $categoria);
-    $comando->bindParam(":prec", $preco); 
+    $comando = $pdo->prepare($sql);
+    $comando->bindParam(":cod", $cod);
+    $comando->bindParam(":nome", $nome);
+    $comando->bindParam(":desc", $desc );
+    $comando->bindParam(":cat", $cat);
+    $comando->bindParam(":preco", $preco);
 
     $sucesso = $comando->execute();
 
-    if ($sucesso){
-        header("Location: http://localhost/fatecshop/admin/listar_produtos.php");
+    if ($sucesso) {
+        header("Location: http://localhost/LaBella/admin/listar_produtos.php");
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +33,7 @@
     <head>
         <meta charset="utf-8">
         <title>FatecShop - Admin</title>
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/estiloadm.css">
     </head>
     <body>
         <h1>FatecShop - Área Administrativa</h1>
