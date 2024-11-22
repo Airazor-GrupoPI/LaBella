@@ -26,6 +26,7 @@
                     <option>Pizza</option>
                     <option>Refrigerante</option>
                     <option>Combo</option>
+                    <option>Promoção</option>
                 </select>
             </div>
             <div>

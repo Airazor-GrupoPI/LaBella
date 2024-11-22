@@ -24,7 +24,7 @@
     $sucesso = $comando->execute();
 
     if ($sucesso) {
-        header("Location: http://localhost/Servidor/fatec_dw2/fatecshop_01/admin/listar_produtos.php");
+        header("Location: http://localhost/LaBella/admin/listar_produtos.php");
     }
 ?>
 

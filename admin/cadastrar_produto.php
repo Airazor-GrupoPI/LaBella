@@ -26,7 +26,7 @@
     $sucesso = $comando->execute();
 
     if ($sucesso){
-        header("Location: http://localhost/Servidor/pizzaria/admin/listar_produtos.php");
+        header("Location: http://localhost/LaBella/admin/listar_produtos.php");
     }
 
 ?>

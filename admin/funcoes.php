@@ -14,7 +14,7 @@
         //Verifica se a variável de sessão para o admin está configurada.
         //se não estiver, redirecionamos o usuário para a página de Login
         if(!isset($_SESSION["admin"])) {
-            header("Location: http://localhost/Servidor/pizzaria/admin/login.php");
+            header("Location: http://localhost/LaBella/admin/login.php");
         }
     }
 

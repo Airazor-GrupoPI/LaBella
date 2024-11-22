@@ -1,12 +1,10 @@
-<!--  Esta página contém apenas o cabeçalho que é utilizado por todas as páginas do site -->
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>La Bella</title>
         <link rel="stylesheet" href="../admin/css/estiloCab.css">
-        <link rel="stylesheet" href="../admin/css/estiloAdm.css">
+        <link rel="stylesheet" href="css/estilosite.css">
         <link rel="stylesheet" href="css/form.css">
         <link rel="icon" href="img/icone_LaBella.png" type="image/png">
     </head>

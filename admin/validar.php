@@ -8,7 +8,7 @@
     //se não estiver, redirecionamos o usuário para a página de Login
     if(validar_admin($_POST["usuario"], $_POST["senha"])) {
         $_SESSION["admin"] = $_POST["usuario"];
-        header("Location: http://localhost/Servidor/pizzaria/admin/index.php");
+        header("Location: http://localhost/LaBella/admin/index.php");
     }
 
 ?>

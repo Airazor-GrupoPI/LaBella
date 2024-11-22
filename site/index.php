@@ -1,54 +1,74 @@
 <?php
-    session_start();
+session_start();
 
-    include "../admin/conexao.php";
-  
-    include "cabecalho.php";
-    
-    $sql = "SELECT * from produtos";    // String com o comando SQL a ser executado
-    $comando = $pdo->query($sql);       // Montamos e deixamos o comando SQL preparado
-    $resultado = $comando->fetchAll();  // Executamos o comando $sql, nesse caso, todo o conteudo da tabela produto
+include "../admin/conexao.php";
+
+include "cabecalho.php";
+
+$sql = "SELECT * from produtos where categoria not like 'Combo' and categoria not like 'Promoção'";    // String com o comando SQL a ser executado
+$sqlc = "SELECT * from produtos where categoria like 'Combo'";
+$sqlp = "SELECT * from produtos where categoria like 'Promoção'";
+
+$comando = $pdo->query($sql);       // Montamos e deixamos o comando SQL preparado
+$comandoc = $pdo->query($sqlc);
+$comandop = $pdo->query($sqlp);
+
+$resultado = $comando->fetchAll();  // Executamos o comando $sql, nesse caso, todo o conteudo da tabela produto
+$resultadoc = $comandoc->fetchAll();
+$resultadop = $comandop->fetchAll();
 
 ?>
-        <main>
-            <h2>Lançamentos</h2>
+
+<main class="container-fluid">
+    <div class="ofertas">
+        <div>
+            <h2>Combo</h2>
             <section id="lancamentos">
-                <?php foreach($resultado as $produto) {?>
+                <?php foreach ($resultadoc as $produto) { ?>
                     <div class="card">
-                        <img src="img/<?= $produto["codigo"] ?>.jpg" alt="<?= $produto["nome"] ?>">
-                        <h3><a href="produto.php?codigo=<?=$produto["codigo"]?>"><?= $produto["nome"] ?></a></h3>
+                        <img src="img/<?= $produto["codigo"] ?>.png" alt="<?= $produto["nome"] ?>">
+                        <h3><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h3>
                         <p><?= $produto["descricao"] ?></p>
-            <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
-                        <span class="preco">R$ <?= number_format($produto["preco_unitario"],2 ,",",".") ?></span>
+                        <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
+                        <span class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></span>
                     </div>
                 <?php } ?>
+            </section>
+        </div>
+        <div>
+            <h2>Promoção</h2>
+            <section id="lancamentos">
+                <?php foreach ($resultadop as $produto) { ?>
+                    <div class="card">
+                        <img src="img/<?= $produto["codigo"] ?>.png" alt="<?= $produto["nome"] ?>">
+                        <h3><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h3>
+                        <p><?= $produto["descricao"] ?></p>
+                        <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
+                        <span class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></span>
+                    </div>
+                <?php } ?>
+            </section>
+        </div>
+    </div>
 
-            </section>
-            
-            <h2>Produtos em oferta</h2>
-            <section id="ofertas">
+    <div>
+        <h2>Catálogo de produtos</h2>
+        <section id="ofertas">
+            <?php foreach ($resultado as $produto) { ?>
                 <div class="card">
-                    <img src="img/impressora.jpg" alt="Impressora">
-                    <h3>Impressora Deskjet HP</h3>
-                    <p>O melhor custo benefício do mercado</p>
-                    <span class="preco">R$ 299,90</span>
+                    <img src="img/<?= $produto["codigo"] ?>.png" alt="<?= $produto["nome"] ?>">
+                    <h3><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h3>
+                    <p><?= $produto["descricao"] ?></p>
+                    <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
+                    <span class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></span>
                 </div>
-                <div class="card">
-                    <img src="img/notebook.png" alt="Notebook">
-                    <h3>Notebook Lenovo i3 Gaming</h3>
-                    <p>Notebook ideal para quem gosta de jogar</p>
-                    <span class="preco">R$ 3.499,90</span>
-                </div>
-                <div class="card">
-                    <img src="img/pendrive.jpg" alt="Pen Drive">
-                    <h3>Pen Drive Kingston 32GB</h3>
-                    <p>Armazene seus arquivos com segurança.</p>
-                    <span class="preco">R$ 24,90</span>
-                </div>
-            </section>
-        </main>
-    <?php
-        include "rodape.php";
-    ?>
-    </body>
+            <?php } ?>
+        </section>
+    </div>
+</main>
+<?php
+include "rodape.php";
+?>
+</body>
+
 </html>
