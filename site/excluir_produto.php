@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include "admin/conexao.php";
+    include "../admin/conexao.php";
 
     $sql  = "DELETE from carrinho where produto = :cod and sessao = :sessao"; 
 

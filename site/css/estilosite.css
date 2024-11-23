@@ -4,7 +4,7 @@
 }
 
 nav {
-    background-color: rgb(145, 144, 144);
+    background-color: #919090;
     margin-bottom: 15px;
     justify-content: right;
     padding: 3px 0;
@@ -14,11 +14,13 @@ nav a {
     width: 160px;
     height: 50px;
     color: white;
-    text-decoration: none; /* remove o underline (sublinhado) padrão do link */
+    text-decoration: none;
+    /* remove o underline (sublinhado) padrão do link */
     font-size: 20px;
     display: flex;
     justify-content: center;
-    align-items: center; /* centraliza horizontalmente o texto */
+    align-items: center;
+    /* centraliza horizontalmente o texto */
 }
 
 /* a:hover indica que este estilo será aplicado quando o mouse for
@@ -36,7 +38,8 @@ nav ul {
 }
 
 nav ul li {
-    list-style-type: none; /* remove o marcador (bolinha) do item */
+    list-style-type: none;
+    /* remove o marcador (bolinha) do item */
     border: 2px solid rgb(255, 180, 83);
     border-radius: 6px;
     margin: 0 20px;
@@ -48,7 +51,7 @@ h1 {
     color: brown;
 }
 
-.ofertas{
+.ofertas {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -68,11 +71,22 @@ h1 {
     margin: 20px;
 }
 
+.card a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.card a:hover{
+    text-decoration: underline;
+}
+
 h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
     color: brown;
-    margin-left: 20px;  
+    margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-top: 1px solid crimson;
@@ -81,43 +95,53 @@ h2 {
 }
 
 table {
-    border: 2px solid black;
+    border: 2px solid #333;
     border-radius: 10px;
     border-collapse: collapse;
-    margin-left: 20px;  
+    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 12px;
     padding: 8px;
-  }
+}
 
-th{
+th {
     padding: 8px;
     background-color: darkgrey;
 }
 
 td {
     padding: 8px;
-    border: 2px solid black;
+    border: 2px solid #333;
     background-color: rgb(233, 171, 171);
     text-decoration: none;
 }
 
 .preco {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
-    color: rgb(22, 22, 22);
+    color: rgb(255, 180, 83);
 }
 
 .card img {
     width: 145px;
 }
 
-#lancamentos, #ofertas {
+.card h3{
+    text-align: center;
+}
+
+#lancamentos,
+#ofertas {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 30px;
+}
+
+#ofertas img{
+    width: 150px;
+    height: 200px;
 }
 
 footer {
@@ -171,54 +195,67 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;      
+    margin: 40px;
+    color: white;
+    background-color: #919090;
+    padding: 20px;
+    border-radius: 12px;
 }
-/*
+
 #fotos-produto img {
     height: 520px;
     width: 100%;
     border-radius: 6px;    
 }
 
-#fotos-miniatura {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 15px;
-    gap: 12px;
-}
-
-#fotos-miniatura img {
-    width: 104px;
-    height: 104px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 #dados-produto {
-    width: 60%;
-    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    gap: 90px;
 }
-*/
+
 #dados-produto h3 {
-    font-size: 42px;
-    margin-bottom: 20px;   
+    font-size: 55px;
+    color: rgb(255, 180, 83);
 }
 
 #dados-produto p {
-    font-size: 24px;
-    width: 70%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 35px;
+    color: #333;
+    font-weight: bold;
 }
 
-#tamanho {
-    font-size: 18px;
-    width: 200px;
-    height: 30px;
-    margin-bottom: 15px;
-    padding: 5px;
+#dados-produto p span{
+    color: rgb(255, 180, 83);
+    font-weight: bold;
 }
+
+#botaoProduto a button{
+    background-color: transparent;
+    border: 2px solid rgb(255, 180, 83);
+    border-radius: 6px;
+    width: 40em;
+    padding: 10px 0;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#botaoProduto{
+    display: flex;
+    justify-content: center;
+}
+
+#botaoProduto a{
+    text-decoration: none;
+}
+
+#botaoProduto a button:hover{
+    background-color: white;
+    color: rgb(255, 180, 83);
+}
+
 
 .quantidade input {
     width: 50px;
@@ -241,9 +278,23 @@ footer {
     border-radius: 6px;
 }
 
-main{
+main {
     border-radius: 12px;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     margin: 0 20px;
+    padding-bottom: 6px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
 }
