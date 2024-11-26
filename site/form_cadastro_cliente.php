@@ -1,56 +1,32 @@
 <?php include "cabecalho.php"; ?>
 
-<h2> Cadastro de novo cliente</h2>
-<main>
+<main id="boxCadastro">
 
-    <form method="POST" action="cadastrar_cliente.php">
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" size="50" maxlength="50" required>
-        </div>
-        <div>
-            <label for="endereco">Endereço:</label>
-            <textarea rows="4" cols="50" id="endereco" name="endereco" required></textarea>
-        </div>
-        <div>
-            <label for="estado">Estado:</label>
-            <select name="estado" id="estado" required>
-                <option value="">AM</option>
-                <option value="">CE</option>
-                <option value="">MG</option>
-                <option value="">PE</option>
-                <option value="">RJ</option>
-                <option value="">PR</option>
-                <option value="">GO</option>
-                <option value="">AP</option>
-                <option selected>SP</option>
-            </select>
-        </div>
-        <div>
-            <label for="cidade">Cidade:</label>
-            <input type="text" name="cidade" id="cidade" size="30" maxlength="30" required>
-        </div>
-        <div>
-            <label for="cep">CEP:</label>
-            <input type="text" name="cep" id="cep" size="09" maxlength="09" required>
-        </div>
-        <div>
-            <label for="telefone">Telefone:</label>
-            <input type="tel" name="telefone" id="telefone" size="14" maxlength="14" required>
-        </div>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email" size="30" maxlength="30" required>
-        </div>
-        <div>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha" size="12" minlength="4" maxlength="12" required>
-        </div>
-        <div id="div_botao">
-            <button>Cadastrar</button>
+    <form method="POST" id="cadastroCliente" action="cadastrar_cliente.php">
+        <h1 class="text-center mb-4">Cadastro de cliente</h1>
+        <input type="text" id="nome" name="nome" placeholder="Nome" size="50" maxlength="50" required>
+        <textarea rows="4" cols="50" id="endereco" name="endereco" placeholder="Endereço" required></textarea>
+        <select name="estado" id="estado" required>
+            <option value="NaN">Selecione seu Estado</option>
+            <option value="Amazonas">AM</option>
+            <option value="Ceará">CE</option>
+            <option value="Minas Gerais">MG</option>
+            <option value="Pernambuco">PE</option>
+            <option value="Rio de Janeiro">RJ</option>
+            <option value="Parana">PR</option>
+            <option value="Goias">GO</option>
+            <option value="Amapá">AP</option>
+            <option value="São Paulo">SP</option>
+        </select>
+        <input type="text" name="cidade" id="cidade" placeholder="Cidade" size="30" maxlength="30" required>
+        <input type="text" name="cep" id="cep" placeholder="CEP" size="09" maxlength="09" required>
+        <input type="tel" name="telefone" id="telefone" placeholder="Telefone" size="14" maxlength="14" required>
+        <input type="email" name="email" id="email" placeholder="E-Mail" size="30" maxlength="30" required>
+        <input type="password" name="senha" id="senha" placeholder="Senha" size="12" minlength="4" maxlength="12" required>
+        <div id="botaoCadastro">
+            <button type="submit">Cadastrar</button>
         </div>
     </form>
 </main>
 
-
-
+<?php include "rodape.php"; ?>

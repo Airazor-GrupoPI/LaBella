@@ -8,13 +8,11 @@ show tables;
 
 CREATE SCHEMA IF NOT EXISTS labella DEFAULT CHARACTER SET utf8 ;
 USE labella;
-CREATE USER 'php'@'localhost' IDENTIFIED BY 'senha123';
-GRANT ALL ON labella.* TO 'php'@'localhost';
 
 -- -------------------------------------------------------------------------------
 
 CREATE TABLE clientes (
-	codigo INT(5) AUTO_INCREMENT NOT NULL,
+	codigo VARCHAR(32) NOT NULL,
 	nome VARCHAR(50) NOT NULL,
 	endereco VARCHAR(50),
 	cidade VARCHAR(30),
@@ -37,7 +35,7 @@ CREATE TABLE produtos (
 
 CREATE TABLE pedidos (
 	codigo INT(8) AUTO_INCREMENT NOT NULL,
-	codigo_cliente INT(5),
+	codigo_cliente VARCHAR(32),
 	data_pedido DATETIME,
 	forma_pagto VARCHAR(20),
 	PRIMARY KEY (codigo),
@@ -57,14 +55,13 @@ CREATE TABLE pedidos_produtos (
 CREATE TABLE carrinho (
 	sessao CHAR(32) NOT NULL,
 	produto INT(5) NOT NULL,
-	preco_unitario DECIMAL(7,2),
 	quantidade INT(3),
 	PRIMARY KEY (sessao, produto)
 );
 
 CREATE TABLE login (
 	sessao CHAR(32) NOT NULL,
-	PRIMARY KEY (sessao, produtos)
+	PRIMARY KEY (sessao)
 );
 
 -- ---------------------------------------------------------------------------------

@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>La Bella</title>
-        <link rel="stylesheet" href="../admin/css/estiloCab.css">
-        <link rel="stylesheet" href="css/estilosite.css">
-        <link rel="stylesheet" href="css/form.css">
-        <link rel="icon" href="img/icone_LaBella.png" type="image/png">
-    </head>
-    <body>
-        <header class="container-fluid">
-            <div id="logo">
-                <img id="logoImg" src="img/icone_LaBella.png" alt="Logotipo LaBella">
-                <img id="slogan" src="img/slogan.png" alt="Slogan LaBella">
+
+<head>
+    <meta charset="UTF-8">
+    <title>La Bella</title>
+    <link rel="stylesheet" href="../admin/css/estiloCab.css">
+    <link rel="stylesheet" href="css/estilosite.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="icon" href="img/icone_LaBella.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="container-fluid">
+        <div id="logo">
+            <img id="logoImg" src="img/icone_LaBella.png" alt="Logotipo LaBella">
+            <img id="slogan" src="img/slogan.png" alt="Slogan LaBella">
+        </div>
+        <a href="login.php" id="login">
+            <p id="loginTxt"><?= isset($_SESSION["nome"]) ? $_SESSION["nome"] : "Acessar" ?></p>
+            <img id="loginImg" src="img/login.png" alt="Login LaBella">
+        </a>
+        <?php if (isset($_SESSION["nome"])) { ?>
+            <div id="logout">
+                <a href="logout.php">Logout</a>
+                <img id="imgLogout" src="img/logout.png" alt="">
             </div>
-            <a href="" id="login">
-                <p id="loginTxt">Acessar</p>
-                <img id="loginImg"  src="img/login.png" alt="Login LaBella">
-            </a>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="index.php">Início</a></li>
-                <li><a href="carrinho.php">Carrinho</a></li>
-                <li><a href="pedido.php">Fazer pedido</a></li>
-                <li><a href="login.php">Área do Cliente</a></li>
-                <li><a href="contato.php">Fale conosco</a></li>
-            </ul>
-        </nav>
+        <?php } ?>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.php">Início</a></li>
+            <li><a href="carrinho.php">Carrinho</a></li>
+            <li><a href="finalizar_pedido.php">Finalizar pedido</a></li>
+            <li><a href="contato.php">Fale conosco</a></li>
+        </ul>
+    </nav>

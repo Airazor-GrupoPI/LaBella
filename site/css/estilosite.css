@@ -40,15 +40,14 @@ nav ul {
 nav ul li {
     list-style-type: none;
     /* remove o marcador (bolinha) do item */
-    border: 2px solid rgb(255, 180, 83);
+    border: 2px solid #ffb453;
     border-radius: 6px;
     margin: 0 20px;
 }
 
 h1 {
     font-size: 72px;
-    text-shadow: 3px 3px 3px gray;
-    color: brown;
+    color: #ffb453;
 }
 
 .ofertas {
@@ -86,9 +85,7 @@ h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
     color: brown;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 20px;
     border-top: 1px solid crimson;
     padding: 4px;
     background-color: aliceblue;
@@ -145,7 +142,7 @@ td {
 }
 
 footer {
-    background-color: rgb(145, 144, 144);
+    background-color: #919090;
 }
 
 #redes img {
@@ -297,4 +294,69 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: gray;
     border-radius: 5px;
+}
+
+#botaoCarrinho a button{
+    background-color: transparent;
+    border: 2px solid rgb(255, 180, 83);
+    border-radius: 6px;
+    width: 20em;
+    padding: 10px 0;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#botaoCarrinho{
+    display: flex;
+    justify-content: space-around;
+}
+
+#botaoCarrinho a{
+    text-decoration: none;
+}
+
+#botaoCarrinho a button:hover{
+    background-color: white;
+    color: rgb(255, 180, 83);
+}
+
+.cardFinaliza{
+    flex-direction: row;
+    width: 60%;
+    height: 50%;
+}
+
+#boxFinaliza{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#valorFinal{
+    color: white;
+}
+
+#logout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    left: 70em;
+    gap: 5px;
+}
+
+#logout a{
+    text-decoration: none;
+    color: #333;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#logout a:hover{
+    text-decoration: underline;
+}
+
+#imgLogout{
+    width: 1.5em;
 }

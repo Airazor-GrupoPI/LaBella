@@ -6,7 +6,7 @@
     $sql  = "DELETE from carrinho where produto = :cod and sessao = :sessao"; 
 
     $codigo = intval(htmlspecialchars($_GET["codigo"]));
-    $id     = session_id();
+    $id = isset($_SESSION["id"]) ? $_SESSION["id"] : session_id();
 
     $comando = $pdo->prepare($sql); 
     $comando->bindParam(":cod", $codigo);

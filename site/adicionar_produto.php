@@ -9,7 +9,7 @@
 
     $sql = "INSERT into carrinho values (:sessao, :prod, NULL, 1)"; //Inserindo a quantidade de produtos no carrinho
     $comando = $pdo->prepare($sql);
-    $id = session_id();
+    $id = isset($_SESSION["id"]) ? $_SESSION["id"] : session_id();
     $comando->bindParam(":sessao", $id);                            // Montamos e deixamos o comando SQL preparado
     $comando->bindParam(":prod", $codigo);
     $res = $comando->execute();                                     // Obtemos o registro como um array associativo

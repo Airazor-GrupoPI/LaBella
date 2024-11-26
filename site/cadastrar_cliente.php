@@ -1,11 +1,13 @@
 <?php
-
+    session_start();
+    session_regenerate_id(true);
     include "../admin/conexao.php";
 
-    $sql  = "INSERT into clientes (nome, endereco, cidade, estado, cep, telefone, email, senha)"; 
-    $sql .= "values (:nome, :ende, :cida, :esta, :cepe, :tele, :emai, :senh)";  // Se precisar quebrar a linha dá para concatenar
+    $sql  = "INSERT into clientes (codigo, nome, endereco, cidade, estado, cep, telefone, email, senha)"; 
+    $sql .= "values (:cod, :nome, :ende, :cida, :esta, :cepe, :tele, :emai, :senh)";  // Se precisar quebrar a linha dá para concatenar
 
         //PARA EVITAR O XSS (CROS SITE SCRIPT) DE HTML E JavaScript NUM FORM, USAR O "htmlspecialchars()"
+    $codigo     = htmlspecialchars(session_id());
     $nome       = htmlspecialchars($_POST["nome"]);
     $endereco   = htmlspecialchars($_POST["endereco"]);
     $cidade     = htmlspecialchars($_POST["cidade"]);
@@ -18,6 +20,7 @@
     $comando = $pdo->prepare($sql); // Comando de preparação para enviar ao Banco de Dados
 
         //PARA EVITAR A INJEÇÃO DE SQL NUM FORM, USAR O "bindParam"
+    $comando->bindParam(":cod", $codigo);
     $comando->bindParam(":nome", $nome);// Fazer a ligação dos valores obtidos no formulario com os campos
     $comando->bindParam(":ende", $endereco);
     $comando->bindParam(":cida", $cidade);
