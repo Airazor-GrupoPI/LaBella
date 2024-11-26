@@ -2,72 +2,67 @@
 session_start();
 
 include "../admin/conexao.php";
-
 include "cabecalho.php";
 
-$sql = "SELECT * from produtos where categoria not like 'Combo' and categoria not like 'Promoção'";    // String com o comando SQL a ser executado
-$sqlc = "SELECT * from produtos where categoria like 'Combo'";
-$sqlp = "SELECT * from produtos where categoria like 'Promoção'";
+$sql = "SELECT * FROM produtos WHERE categoria NOT LIKE 'Combo' AND categoria NOT LIKE 'Promoção'";
+$sqlc = "SELECT * FROM produtos WHERE categoria LIKE 'Combo'";
+$sqlp = "SELECT * FROM produtos WHERE categoria LIKE 'Promoção'";
 
-$comando = $pdo->query($sql);       // Montamos e deixamos o comando SQL preparado
+$comando = $pdo->query($sql);
 $comandoc = $pdo->query($sqlc);
 $comandop = $pdo->query($sqlp);
 
-$resultado = $comando->fetchAll();  // Executamos o comando $sql, nesse caso, todo o conteudo da tabela produto
+$resultado = $comando->fetchAll();
 $resultadoc = $comandoc->fetchAll();
 $resultadop = $comandop->fetchAll();
-
 ?>
-<main class="container-fluid">
-    <div class="ofertas">
-        <div>
-            <h2>Combo</h2>
-            <section id="lancamentos">
+<main class="container-fluid py-4">
+    <div class="container">
+        <div class="row mb-4">
+            <h2 class="text-center">Combo</h2>
+            <div class="d-flex flex-wrap justify-content-around" id="lancamentos">
                 <?php foreach ($resultadoc as $produto) { ?>
-                    <div class="card">
-                        <img src="img/<?= $produto["codigo"] ?>.png" alt="<?= $produto["nome"] ?>">
-                        <h3><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h3>
-                        <p><?= $produto["descricao"] ?></p>
-                        <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
-                        <span class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></span>
+                    <div class="card p-3 m-2">
+                        <img src="img/<?= $produto["codigo"] ?>.png" class="card-img-top" alt="<?= $produto["nome"] ?>">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h5>
+                            <p class="card-text"><?= $produto["descricao"] ?></p>
+                            <p class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></p>
+                        </div>
                     </div>
                 <?php } ?>
-            </section>
+            </div>
         </div>
-        <div>
-            <h2>Promoção</h2>
-            <section id="lancamentos">
+        <div class="row mb-4">
+            <h2 class="text-center">Promoção</h2>
+            <div class="d-flex flex-wrap justify-content-around" id="lancamentos">
                 <?php foreach ($resultadop as $produto) { ?>
-                    <div class="card">
-                        <img src="img/<?= $produto["codigo"] ?>.png" alt="<?= $produto["nome"] ?>">
-                        <h3><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h3>
-                        <p><?= $produto["descricao"] ?></p>
-                        <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
-                        <span class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></span>
+                    <div class="card p-3 m-2" style="width: 18rem;">
+                        <img src="img/<?= $produto["codigo"] ?>.png" class="card-img-top" alt="<?= $produto["nome"] ?>">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h5>
+                            <p class="card-text"><?= $produto["descricao"] ?></p>
+                            <p class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></p>
+                        </div>
                     </div>
                 <?php } ?>
-            </section>
+            </div>
         </div>
-    </div>
-
-    <div>
-        <h2>Catálogo de produtos</h2>
-        <section id="ofertas">
-            <?php foreach ($resultado as $produto) { ?>
-                <div class="card">
-                    <img src="img/<?= $produto["codigo"] ?>.png" alt="<?= $produto["nome"] ?>">
-                    <h3><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h3>
-                    <p><?= $produto["descricao"] ?></p>
-                    <!-- Utilizando o number_format(variável, qtd casas decimais, separador de casa decimal, separador de milhares) -->
-                    <span class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></span>
-                </div>
-            <?php } ?>
-        </section>
+        <div class="row">
+            <h2 class="text-center">Catálogo de produtos</h2>
+            <div class="d-flex flex-wrap justify-content-around" id="ofertas">
+                <?php foreach ($resultado as $produto) { ?>
+                    <div class="card p-3 m-2" style="width: 18rem;">
+                        <img src="img/<?= $produto["codigo"] ?>.png" class="card-img-top" alt="<?= $produto["nome"] ?>">
+                        <div class="card-body text-center">
+                            <h5 class="card-title"><a href="produto.php?codigo=<?= $produto["codigo"] ?>"><?= $produto["nome"] ?></a></h5>
+                            <p class="card-text"><?= $produto["descricao"] ?></p>
+                            <p class="preco">R$ <?= number_format($produto["preco_unitario"], 2, ",", ".") ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
     </div>
 </main>
-<?php
-include "rodape.php";
-?>
-</body>
-
-</html>
+<?php include "rodape.php"; ?>
