@@ -51,10 +51,6 @@ header {
     color: #333;
 }
 
-#login:hover{
-    text-decoration: underline;
-}
-
 #loginImg{
     width: 5em;
 }
