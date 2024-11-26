@@ -7,7 +7,7 @@
         // htmlspecialchars para filtrar injeção de código
     $codigo = htmlspecialchars(($_GET["codigo"]));
 
-    $sql = "INSERT into carrinho values (:sessao, :prod, NULL, 1)"; //Inserindo a quantidade de produtos no carrinho
+    $sql = "INSERT into carrinho values (:sessao, :prod, 1)"; //Inserindo a quantidade de produtos no carrinho
     $comando = $pdo->prepare($sql);
     $id = isset($_SESSION["id"]) ? $_SESSION["id"] : session_id();
     $comando->bindParam(":sessao", $id);                            // Montamos e deixamos o comando SQL preparado
