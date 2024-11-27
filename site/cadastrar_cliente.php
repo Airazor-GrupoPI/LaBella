@@ -6,7 +6,7 @@
     $sql  = "INSERT into clientes (codigo, nome, endereco, cidade, estado, cep, telefone, email, senha)"; 
     $sql .= "values (:cod, :nome, :ende, :cida, :esta, :cepe, :tele, :emai, :senh)";  // Se precisar quebrar a linha dá para concatenar
 
-        //PARA EVITAR O XSS (CROS SITE SCRIPT) DE HTML E JavaScript NUM FORM, USAR O "htmlspecialchars()"
+        //PARA EVITAR O XSS (CROSS SITE SCRIPT) DE HTML E JavaScript NUM FORM, USAR O "htmlspecialchars()"
     $codigo     = htmlspecialchars(session_id());
     $nome       = htmlspecialchars($_POST["nome"]);
     $endereco   = htmlspecialchars($_POST["endereco"]);
@@ -39,11 +39,9 @@
 ?>
 
 <?php if ($sucesso){ ?>
-    <h2>Cadastro realizado com sucesso!</h2>
-    <p><a href="login.php">Clique aqui para fazer o login na loja.</a></p>
+    <!DOCTYPE html><html><body onload="alert('<?php echo 'Cadastro realizado com sucesso!'; ?>'); window.location.replace('http://localhost/LaBella/site/index.php');">
 <?php } else{ ?>
-    <h2 style="color: red;">FALHA NA INCLUSÃO</h2>
-    <p><a href="form_cadastrar_cliente.php">Clique aqui para tentar novamente.</a></p>
+    <!DOCTYPE html><html><body onload="alert('<?php echo 'Falha no Cadastro, tente novamente'; ?>'); window.location.replace('http://localhost/LaBella/site/form_cadastro_cliente.php');">
 <?php } ?>
 
 <?php include "rodape.php"; ?>

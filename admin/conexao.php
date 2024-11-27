@@ -2,7 +2,7 @@
 
     $tipo_banco = "mysql";      // Identificador do SGBD usado
     $servidor   = "localhost";  // Endereço do servidor
-    $porta      = 3307;         // Número da porta do servidor
+    $porta      = 3306;         // Número da porta do servidor
     $banco      = "labella";    // Nome do banco de dados a ser usado
     $usuario    = "php";        // Usuário que acessará o banco
     $senha      = "senha123";   // Senha cadastrada na criação do BD
