@@ -32,10 +32,6 @@
 
     $sucesso = $comando->execute();
 
-    // Não será necessário usar "Location" pois será mostrada mensagem de cadastro ok ou não
-
-    include "cabecalho.php";
-
 ?>
 
 <?php if ($sucesso){ ?>
