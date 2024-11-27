@@ -32,18 +32,6 @@
 
     $sucesso = $comando->execute();
 
-    // Não será necessário usar "Location" pois será mostrada mensagem de cadastro ok ou não
-
-    include "cabecalho.php";
+    header("Location: login.php");
 
 ?>
-
-<?php if ($sucesso){ ?>
-    <h2>Cadastro realizado com sucesso!</h2>
-    <p><a href="login.php">Clique aqui para fazer o login na loja.</a></p>
-<?php } else{ ?>
-    <h2 style="color: red;">FALHA NA INCLUSÃO</h2>
-    <p><a href="form_cadastrar_cliente.php">Clique aqui para tentar novamente.</a></p>
-<?php } ?>
-
-<?php include "rodape.php"; ?>
