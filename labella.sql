@@ -16,7 +16,7 @@ CREATE TABLE clientes (
 	nome VARCHAR(50) NOT NULL,
 	endereco VARCHAR(50),
 	cidade VARCHAR(30),
-	estado CHAR(2),
+	estado VARCHAR(10),
 	cep VARCHAR(10),
 	telefone VARCHAR(15),
 	email VARCHAR(30),
