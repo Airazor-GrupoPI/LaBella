@@ -35,7 +35,7 @@
 ?>
 
 <?php if ($sucesso){ ?>
-    <!DOCTYPE html><html><body onload="alert('<?php echo 'Cadastro realizado com sucesso!'; ?>'); window.location.replace('http://localhost/LaBella/site/index.php');">
+    <!DOCTYPE html><html><body onload="alert('<?php echo 'Cadastro realizado com sucesso!'; ?>'); window.location.replace('http://localhost/LaBella/site/login.php');">
 <?php } else{ ?>
     <!DOCTYPE html><html><body onload="alert('<?php echo 'Falha no Cadastro, tente novamente'; ?>'); window.location.replace('http://localhost/LaBella/site/form_cadastro_cliente.php');">
 <?php } ?>
