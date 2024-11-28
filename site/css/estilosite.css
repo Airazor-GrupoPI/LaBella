@@ -342,7 +342,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: row;
     align-items: center;
     position: fixed;
-    left: 70em;
+    left: 80em;
     gap: 5px;
 }
 

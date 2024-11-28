@@ -24,7 +24,7 @@
                 <label for="categoria">Categoria: </label>
                 <select id="categoria" name="categoria" required>
                     <option>Pizza</option>
-                    <option>Refrigerante</option>
+                    <option>Bebida</option>
                     <option>Combo</option>
                     <option>Promoção</option>
                 </select>
